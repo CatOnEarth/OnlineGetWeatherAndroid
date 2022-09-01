@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">WeatherOnline</string>
+    <string name="app_name">Погода.онлайн</string>
+    <string name="textCityNameStringResource">Город</string>
+    <string name="textInputCityNameStringResource">Введите название города</string>
+    <string name="textWindStringResource">Ветер:</string>
+    <string name="textWaterStringResource">Влажность:</string>
+    <string name="textTemperatureStringResource">Температура(Цельсии):</string>
+    <string name="textDescriptionStringResource">Описание:</string>
+    <string name="textJSONStringResource">JSON:</string>
+    <string name="hintCityNameStringResource">Название города</string>
 </resources>
