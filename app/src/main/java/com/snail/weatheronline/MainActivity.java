@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -57,9 +58,22 @@ public class MainActivity extends AppCompatActivity {
                     editTextCityName.setError("Введите город");
                 } else {
                     makeRequest(city);
+                    closeKeyboard();
                 }
             }
         });
+    }
+
+    /**Hide keyboard
+     *
+     */
+    private void closeKeyboard() {
+        View view = getCurrentFocus();
+
+        if (view != null) {
+            InputMethodManager manager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            manager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     private String GetCity() {
