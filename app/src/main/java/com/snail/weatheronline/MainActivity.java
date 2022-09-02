@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -99,14 +100,21 @@ public class MainActivity extends AppCompatActivity {
             HttpURLConnection connection = null;
             BufferedReader    bufRead    = null;
 
+            Log.i("AsyncTask connect", strings[0]);
+
             try {
                 URL url = new URL(strings[0]);
                 connection = (HttpURLConnection) url.openConnection();
                 connection.connect();
 
-                InputStream stream = connection.getInputStream();
-                bufRead = new BufferedReader(new InputStreamReader(stream));
+                InputStream stream;
+                try {
+                    stream = connection.getInputStream();
+                } catch(IOException exception) {
+                    stream = connection.getErrorStream();
+                }
 
+                bufRead = new BufferedReader(new InputStreamReader(stream));
                 StringBuilder strBuff = new StringBuilder();
                 String line;
 
@@ -148,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         private void setWeather(String response) throws JSONException {
             JSONObject weatherJson = new JSONObject(response);
 
-            if (weatherJson.getInt("cod") == 404) {
+            if (weatherJson.getString("cod").equals("404")) {
                 textViewCity.setText("Неверно указан город");
                 return;
             }
