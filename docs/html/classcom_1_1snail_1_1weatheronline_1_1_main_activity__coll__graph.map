@@ -1,4 +1,6 @@
 <map id="com.snail.weatheronline.MainActivity" name="com.snail.weatheronline.MainActivity">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,171,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="22,5,154,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="117,168,282,209"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,137,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="162,5,237,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="317,5,388,32"/>
 </map>

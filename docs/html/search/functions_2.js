@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['useappcontext_0',['useAppContext',['../classcom_1_1snail_1_1weatheronline_1_1_example_instrumented_test.html#ae9325c958995c3da68925308bc718bb0',1,'com::snail::weatheronline::ExampleInstrumentedTest']]]
+  ['doinbackground_0',['doInBackground',['../classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online.html#a0463df6d9a89f65d3bf5f5e6374eace6',1,'com::snail::weatheronline::MainActivity::GetWeatherOnline']]]
 ];

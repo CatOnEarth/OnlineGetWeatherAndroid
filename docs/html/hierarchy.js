@@ -5,5 +5,8 @@ var hierarchy =
     [ "com.snail.weatheronline.ExampleUnitTest", "classcom_1_1snail_1_1weatheronline_1_1_example_unit_test.html", null ],
     [ "AppCompatActivity", null, [
       [ "com.snail.weatheronline.MainActivity", "classcom_1_1snail_1_1weatheronline_1_1_main_activity.html", null ]
+    ] ],
+    [ "AsyncTask", null, [
+      [ "com.snail.weatheronline.MainActivity.GetWeatherOnline", "classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online.html", null ]
     ] ]
 ];

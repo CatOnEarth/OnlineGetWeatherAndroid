@@ -23,16 +23,28 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/** Launched class of application */
 public class MainActivity extends AppCompatActivity {
 
+    /** textView of city name */
     private TextView textViewCity;
+    /** textView of weather description in city */
     private TextView textViewDescription;
+    /** textView of temperature in city */
     private TextView textViewTemperature;
+    /** textView of humidity in city */
     private TextView textViewWater;
+    /** textView of wind in city */
     private TextView textViewWindy;
+    /** textView JSON answer from server */
     private TextView textViewJSON;
+    /** editText input city */
     private EditText editTextCityName;
 
+    /** Method onCreate activity person register
+     *
+     * @param savedInstanceState saved last activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,10 +83,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**Get city name from editText
+     *
+     * @return String city name from editText
+     */
     private String GetCity() {
         return editTextCityName.getText().toString().trim();
     }
 
+    /**Make request api openweathermap
+     *
+     * @param city name city
+     */
     private void makeRequest(String city) {
         String api_key = getResources().getString(R.string.apiWeatherOnline);
         if (api_key.equals("")) {
@@ -86,15 +106,24 @@ public class MainActivity extends AppCompatActivity {
         new GetWeatherOnline().execute(url);
     }
 
+    /** AsyncTask to make request to api and set data */
     @SuppressLint("StaticFieldLeak")
     private class GetWeatherOnline extends AsyncTask<String, String, String> {
 
+        /**Runs on the UI thread before doInBackground
+         *
+         */
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             textViewCity.setText("Идет запрос...");
         }
 
+        /**Override this method to perform a computation on a background thread.
+         *
+         * @param strings The parameters of the task.
+         * @return A result, defined by the subclass of this task.
+         */
         @Override
         protected String doInBackground(String... strings) {
             HttpURLConnection connection = null;
@@ -141,6 +170,10 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
+        /**Runs on the UI thread after doInBackground
+         *
+         * @param s The result of the operation computed by doInBackground
+         */
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
@@ -153,6 +186,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        /**Set weather to textView
+         *
+         * @param response JSON string
+         * @throws JSONException exception
+         */
         private void setWeather(String response) throws JSONException {
             JSONObject weatherJson = new JSONObject(response);
 

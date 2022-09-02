@@ -1,0 +1,120 @@
+\hypertarget{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online}{}\doxysection{com.\+snail.\+weatheronline.\+Main\+Activity.\+Get\+Weather\+Online Class Reference}
+\label{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online}\index{com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}}
+
+
+Inheritance diagram for com.\+snail.\+weatheronline.\+Main\+Activity.\+Get\+Weather\+Online\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\+snail.\+weatheronline.\+Main\+Activity.\+Get\+Weather\+Online\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_ae7f8d8508e60dc2dacc0a7312a3ed4b8}{on\+Pre\+Execute}} ()
+\item 
+String \mbox{\hyperlink{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_a0463df6d9a89f65d3bf5f5e6374eace6}{do\+In\+Background}} (String... strings)
+\item 
+void \mbox{\hyperlink{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_adb70cd0a9d037ec8f96adc93ca6d6f9f}{on\+Post\+Execute}} (String s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_aefe6dc9ee7d19b90b69263904a687bc0}{set\+Weather}} (String response)  throws JSONException 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Async\+Task to make request to api and set data 
+
+Definition at line \mbox{\hyperlink{_main_activity_8java_source_l00111}{111}} of file \mbox{\hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_a0463df6d9a89f65d3bf5f5e6374eace6}\label{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_a0463df6d9a89f65d3bf5f5e6374eace6}} 
+\index{com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}!doInBackground@{doInBackground}}
+\index{doInBackground@{doInBackground}!com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}}
+\doxysubsubsection{\texorpdfstring{doInBackground()}{doInBackground()}}
+{\footnotesize\ttfamily String com.\+snail.\+weatheronline.\+Main\+Activity.\+Get\+Weather\+Online.\+do\+In\+Background (\begin{DoxyParamCaption}\item[{String...}]{strings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Override this method to perform a computation on a background thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em strings} & The parameters of the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result, defined by the subclass of this task. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_main_activity_8java_source_l00128}{128}} of file \mbox{\hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}}.
+
+\mbox{\Hypertarget{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_adb70cd0a9d037ec8f96adc93ca6d6f9f}\label{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_adb70cd0a9d037ec8f96adc93ca6d6f9f}} 
+\index{com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}!onPostExecute@{onPostExecute}}
+\index{onPostExecute@{onPostExecute}!com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}}
+\doxysubsubsection{\texorpdfstring{onPostExecute()}{onPostExecute()}}
+{\footnotesize\ttfamily void com.\+snail.\+weatheronline.\+Main\+Activity.\+Get\+Weather\+Online.\+on\+Post\+Execute (\begin{DoxyParamCaption}\item[{String}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Runs on the UI thread after do\+In\+Background
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The result of the operation computed by do\+In\+Background \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_main_activity_8java_source_l00178}{178}} of file \mbox{\hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}}.
+
+\mbox{\Hypertarget{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_ae7f8d8508e60dc2dacc0a7312a3ed4b8}\label{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_ae7f8d8508e60dc2dacc0a7312a3ed4b8}} 
+\index{com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}!onPreExecute@{onPreExecute}}
+\index{onPreExecute@{onPreExecute}!com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}}
+\doxysubsubsection{\texorpdfstring{onPreExecute()}{onPreExecute()}}
+{\footnotesize\ttfamily void com.\+snail.\+weatheronline.\+Main\+Activity.\+Get\+Weather\+Online.\+on\+Pre\+Execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Runs on the UI thread before do\+In\+Background 
+
+Definition at line \mbox{\hyperlink{_main_activity_8java_source_l00117}{117}} of file \mbox{\hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}}.
+
+\mbox{\Hypertarget{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_aefe6dc9ee7d19b90b69263904a687bc0}\label{classcom_1_1snail_1_1weatheronline_1_1_main_activity_1_1_get_weather_online_aefe6dc9ee7d19b90b69263904a687bc0}} 
+\index{com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}!setWeather@{setWeather}}
+\index{setWeather@{setWeather}!com.snail.weatheronline.MainActivity.GetWeatherOnline@{com.snail.weatheronline.MainActivity.GetWeatherOnline}}
+\doxysubsubsection{\texorpdfstring{setWeather()}{setWeather()}}
+{\footnotesize\ttfamily void com.\+snail.\+weatheronline.\+Main\+Activity.\+Get\+Weather\+Online.\+set\+Weather (\begin{DoxyParamCaption}\item[{String}]{response }\end{DoxyParamCaption}) throws JSONException\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Set weather to text\+View
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & JSON string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em JSONException} & exception \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_main_activity_8java_source_l00194}{194}} of file \mbox{\hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/snail/weatheronline/\mbox{\hyperlink{_main_activity_8java}{Main\+Activity.\+java}}\end{DoxyCompactItemize}
