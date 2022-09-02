@@ -20,10 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-
-import leakcanary.LeakCanary;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,16 +47,13 @@ public class MainActivity extends AppCompatActivity {
         textViewWindy       = findViewById(R.id.textViewWind);
 
         ImageButton bGetWeather = findViewById(R.id.imageButton);
-        bGetWeather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String city = GetCity();
-                if (city.equals("")) {
-                    editTextCityName.setError("Введите город");
-                } else {
-                    makeRequest(city);
-                    closeKeyboard();
-                }
+        bGetWeather.setOnClickListener(v -> {
+            String city = GetCity();
+            if (city.equals("")) {
+                editTextCityName.setError("Введите город");
+            } else {
+                makeRequest(city);
+                closeKeyboard();
             }
         });
     }
@@ -113,8 +107,8 @@ public class MainActivity extends AppCompatActivity {
                 InputStream stream = connection.getInputStream();
                 bufRead = new BufferedReader(new InputStreamReader(stream));
 
-                StringBuffer strBuff = new StringBuffer();
-                String line = "";
+                StringBuilder strBuff = new StringBuilder();
+                String line;
 
                 while ((line = bufRead.readLine()) != null) {
                     strBuff.append(line).append("\n");
@@ -154,19 +148,24 @@ public class MainActivity extends AppCompatActivity {
         private void setWeather(String response) throws JSONException {
             JSONObject weatherJson = new JSONObject(response);
 
+            if (weatherJson.getInt("cod") == 404) {
+                textViewCity.setText("Неверно указан город");
+                return;
+            }
+
             String city  = weatherJson.getString("name");
 
             String description = getResources().getString(R.string.textDescriptionStringResource) +
                                     weatherJson.getJSONArray("weather").getJSONObject(0).getString("description");
 
             String temp  = getResources().getString(R.string.textTemperatureStringResource) +
-                            String.valueOf(weatherJson.getJSONObject("main").getDouble("temp")) + "\u00B0" + "C";
+                    weatherJson.getJSONObject("main").getDouble("temp") + "\u00B0" + "C";
 
             String water = getResources().getString(R.string.textWaterStringResource) +
-                            String.valueOf(weatherJson.getJSONObject("main").getDouble("humidity")) + "%";
+                    weatherJson.getJSONObject("main").getDouble("humidity") + "%";
 
             String wind  = getResources().getString(R.string.textWindStringResource) +
-                    String.valueOf(weatherJson.getJSONObject("wind").getDouble("speed")) + "м/с";
+                    weatherJson.getJSONObject("wind").getDouble("speed") + "м/с";
 
             textViewCity.setText(city);
             textViewDescription.setText(description);
